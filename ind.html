@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xplora Challenge Activities</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f4f4f9, #e0eaff);
+            color: #333;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            margin-top: 10px;
+            border: 1px #015c8b solid;
+            background-color: #2575fc;
+            border-radius: 50px;
+            font-size: 14px;
+            text-decoration: underline;
+            color: white;
+            cursor: pointer;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .activity {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        .activity:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .activity img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: filter 0.3s ease;
+        }
+        .activity:hover img {
+            filter: brightness(1);
+        }
+        .activity-details {
+            padding: 20px;
+            text-align: center;
+        }
+        .activity-details h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #2575fc;
+        }
+        .activity-details p {
+            margin: 10px 0 0;
+            color: #666;
+            font-size: 1rem;
+        }
+        .footer {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            button {
+                width: 120px;
+                height: 35px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 0.9rem;
+            }
+            .activity-details h2 {
+                font-size: 1.2rem;
+            }
+            .activity-details p {
+                font-size: 0.9rem;
+            }
+            button {
+                width: 100px;
+                height: 30px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Xplora Challenge Activities</h1>
+        <p>Discover and participate in exciting activities to unleash your potential!</p>
+    </div>
+
+    <div class="container">
+        <div class="activity">
+            <img src="./assets/survey.jpg" alt="Adventure Trail">
+            <div class="activity-details">
+                <h2>Conducting Education Survey (Compulsory)</h2>
+                <p>This activity involves conducting a simple yet engaging survey on the education system. 
+                    We provide you with an interesting set of questions, and your task is to gather responses and insights from people. 
+                    <span id="activity1-dots">...</span>
+                    <span id="activity1-more" style="display:none;">The goal is to understand diverse perspectives on education while practicing research and analysis skills.</span>
+                </p>
+                <button onclick="toggleText('activity1')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/trollll.png" alt="Creative Workshop" class="x">
+            <div class="activity-details">
+                <h2>Trolls/Meme Making</h2>
+                <p>Unleash your creativity and humor by making funny and engaging trolls or memes on a given topic. 
+                    The challenge is to blend wit and creativity while keeping the content relatable, simple, and light-hearted.
+                    <span id="activity2-dots">...</span>
+                    <span id="activity2-more" style="display:none;">You can express your unique sense of humor and make an impact with your clever designs.</span>
+                </p>
+                <button onclick="toggleText('activity2')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/bingo.jpg" alt="Tech Challenge">
+            <div class="activity-details">
+                <h2>Friends Circle Bingo</h2>
+                <p>This interactive game is designed to help you learn more about your friends. 
+                    You’ll be given a set of qualities (e.g., "Who is more athletic in your group?"), and your task is to identify and name friends who fit each description. 
+                    <span id="activity3-dots">...</span>
+                    <span id="activity3-more" style="display:none;">It’s a fun way to celebrate your social circle and deepen connections.</span>
+                </p>
+                <button onclick="toggleText('activity3')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/talent.jpg" alt="Fitness Frenzy">
+            <div class="activity-details">
+                <h2>Talent Showcase</h2>
+                <p>Here’s your chance to shine! Display your unique talent—be it in cultural performances, artistic creations, sports, or any other skill. 
+                    <span id="activity4-dots">...</span>
+                    <span id="activity4-more" style="display:none;">The stage is yours to inspire and impress.</span>
+                </p>
+                <button onclick="toggleText('activity4')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/pitch.jpg" alt="Quiz Mania">
+            <div class="activity-details">
+                <h2>Business Idea Pitching</h2>
+                <p>Got a cool business idea? Present it in a creative and compelling way to us. 
+                    Highlight what makes your idea innovative, impactful, and exciting. 
+                    <span id="activity5-dots">...</span>
+                    <span id="activity5-more" style="display:none;">This is an opportunity to think like an entrepreneur and share your vision.</span>
+                </p>
+                <button onclick="toggleText('activity5')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/Danil.png" alt="Community Service">
+            <div class="activity-details">
+                <h2>Social Cause</h2>
+                <p>Contribute to making a difference in society by engaging in a meaningful activity, such as planting a tree, helping someone in need, or any other small action that creates a positive impact. 
+                    <span id="activity6-dots">...</span>
+                    <span id="activity6-more" style="display:none;">The focus is on promoting kindness and responsibility.</span>
+                </p>
+                <button onclick="toggleText('activity6')">Read more</button>
+            </div>
+        </div>
+
+        <div class="activity">
+            <img src="./assets/ai.jpeg" alt="Talent Showcase">
+            <div class="activity-details">
+                <h2>AI Image Gallery Creation</h2>
+                <p>Dive into the world of Artificial Intelligence by creating stunning images using AI tools. 
+                    Choose a theme, generate images, and curate them into a gallery that tells a story or highlights your creativity with technology. 
+                    <span id="activity7-dots">...</span>
+                    <span id="activity7-more" style="display:none;">It’s a great way to combine tech-savvy skills with artistic expression.</span>
+                </p>
+                <button onclick="toggleText('activity7')">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Xplora Challenge. All rights reserved.</p>
+    </div>
+
+    <script>
+        function toggleText(activityId) {
+            const dots = document.getElementById(activityId + "-dots");
+            const more = document.getElementById(activityId + "-more");
+            const button = document.querySelector(`button[onclick="toggleText('${activityId}')"]`);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                more.style.display = "none";
+                button.innerText = "Read more";
+            } else {
+                dots.style.display = "none";
+                more.style.display = "inline";
+                button.innerText = "Read less";
+            }
+        }
+    </script>
+</body>
+</html>
